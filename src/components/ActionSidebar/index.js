@@ -130,8 +130,8 @@ const ActionSidebar = () => {
 		if (typeof userPrompters.prompterSlug !== 'undefined') {
 			const slug = userPrompters.prompterSlug
 			setPrompterSlug(slug)
-			setStreamAddress(`prompter.me/player/${slug}`)
-			setRemoteAddress(`prompter.me/remote/${slug}`)
+			setStreamAddress(`prompter1.local/player/${slug}`)
+			setRemoteAddress(`prompter1.local/remote/${slug}`)
 		}
 		setScrollSpeed(sp)
 	}), [store, text, scrollSpeed, prompterSlug])
@@ -145,13 +145,13 @@ const ActionSidebar = () => {
 		case 'stream':
 			setStreamAddress('copied')
 			setTimeout(() => {
-				setStreamAddress(`prompter.me/player/${prompterSlug}`)
+				setStreamAddress(`prompter1.local/player/${prompterSlug}`)
 			}, 2000)
 			break
 		case 'remote':
 			setRemoteAddress('copied')
 			setTimeout(() => {
-				setRemoteAddress(`prompter.me/remote/${prompterSlug}`)
+				setRemoteAddress(`prompter1.local/remote/${prompterSlug}`)
 			}, 2000)
 			break
 		default:
@@ -190,7 +190,7 @@ const ActionSidebar = () => {
 					>
 						<CopyToClipboard
 							onCopy={() => copyValue('stream')}
-							text={`prompter.me/player/${prompterSlug || ''}`}
+							text={`prompter1.local/player/${prompterSlug || ''}`}
 						>
 							<div
 								className={styles.copyIcon}
@@ -210,7 +210,7 @@ const ActionSidebar = () => {
 					>
 						<CopyToClipboard
 							onCopy={() => copyValue('remote')}
-							text={`prompter.me/remote/${prompterSlug || ''}`}
+							text={`prompter1.local/remote/${prompterSlug || ''}`}
 						>
 							<div
 								className={styles.copyIcon}
